@@ -50,3 +50,38 @@ print(round(answer, 3)) # >>> 1.0
 print((19/155)*(155/19) == 1.0) # >>> Flase
 print(math.isclose((19/155)*(155/19), 1)) # >>> True
 
+
+
+"""True division and floor division"""
+
+#Doing floor division
+
+total_seconds = 7385
+hours = total_seconds // 3600 #  // Floor division
+remaining_seconds = total_seconds % 3600 
+minutes = remaining_seconds // 60
+seconds = remaining_seconds % 60
+print(f"Hours: {hours}, Minutes: {minutes}, Seconds: {seconds}")
+
+# Alternative 
+
+total_seconds = 7385
+hours, remaining_seconds = divmod(total_seconds, 3600)
+minutes, seconds = divmod(remaining_seconds, 60)
+print(f"Hours: {hours}, Minutes: {minutes}, Seconds: {seconds}")
+
+# Doing true division
+total_seconds = 7385
+hours = total_seconds / 3600
+print(round(hours, 4)) # >>> 2.0514
+
+# Rational fraction calculations
+
+from fractions import Fraction
+
+total_seconds = Fraction(7385)
+hours = total_seconds / 3600 # Fraction(1477, 720)
+print(hours) # 2.0514
+round(float(hours),4) 
+
+
