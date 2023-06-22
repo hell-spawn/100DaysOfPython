@@ -22,6 +22,7 @@ print(eight_card.points())
 from dataclasses import dataclass
 from typing import List
 
+## Dataclass create basic metodos to tha class
 @dataclass
 class CribbageHand:
 
@@ -54,3 +55,4 @@ cribbageHand.to_crib(CardPoints(rank=3, suit='â—Š'), CardPoints(rank=1, suit='â™
 print(cribbageHand.__repr__())
 result = [c.points() for c in cribbageHand.cards]
 print(result)
+
