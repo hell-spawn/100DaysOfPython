@@ -1,7 +1,7 @@
 from typing import NamedTuple
 
 """
-Inmutable class
+Immutable class
 """
 class CardPoints(NamedTuple):
 
@@ -17,12 +17,17 @@ class CardPoints(NamedTuple):
 eight_card = CardPoints(8, '\N{White Heart Suit}')
 
 print(eight_card)
+print(eight_card.rank) #Attributes for name
+print(eight_card[0]) #Attributes for position
 print(eight_card.points())
+
+
+#eight_card.suit = '\N{Black Spade Suit}' # Error attribute static
 
 from dataclasses import dataclass
 from typing import List
 
-## Dataclass create basic metodos to tha class
+## Dataclass create basic methods to tha class
 @dataclass
 class CribbageHand:
 

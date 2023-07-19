@@ -7,14 +7,14 @@ import random
 class CounterStatistics:
 
     """
-    Docstring for CounterStatistics. 
+    Docstring for CounterStatistics.
     """
 
     def __init__(self, raw_counter: Counter[int]) -> None:
         """Constructs all the necessary attributes for the CounterStatistics object. """
         self.raw_counter = raw_counter
         self.mean = self.compute_mean()
-        self.stddev = self.compute_stddev() 
+        self.stddev = self.compute_stddev()
 
     def compute_mean(self) -> float:
         total, count = 0.0, 0

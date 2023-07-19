@@ -6,7 +6,7 @@ from random import randint
 class Dice():
 
     """
-    Docstring for Dice. 
+    Docstring for Dice.
     """
 
     def __init__(self) -> None:
@@ -26,7 +26,6 @@ class Dice():
 
     def easyway(self) -> bool:
         return self.faces[0] != self.faces[1]
-        
 
 #random.seed(1)
 #
@@ -43,7 +42,7 @@ class Dice():
 #
 
 def coupon_collector(n: int, data: Iterable[int]) -> Iterator[int]:
-    """     
+    """
     >>> samples = [0, 1, 2, 3, 0, 0, 1, 1, 2, 2, 3, 3]
     >>> list(coupon_collector(4, samples))
     [4, 7]
@@ -52,7 +51,7 @@ def coupon_collector(n: int, data: Iterable[int]) -> Iterator[int]:
     for item in data:
         count += 1
         # collection = collection|{item}
-        collection.add(item)                                                                                                                                                              
+        collection.add(item)
         print(f'Count: {count}')
         print(f'Collection: {collection}')
         if len(collection) == n:
