@@ -137,3 +137,60 @@ Crea una serie de Pandas llamada frutas y que contenga los siguientes elementos:
 #filtro = frutas.str.contains("e")
 #frutas_con_e = frutas[filtro]
 #print(frutas_con_e)
+
+
+"""
+Agregación de Series en Pandas 1
+
+Crea una serie de Pandas a partir de la siguiente lista de edades = [23, 30, 26, 27, 22, 24, 25, 28]. 
+Luego, utiliza la función adecuada para calcular el promedio de estas edades. Almacena el promedio en una variable llamada: promedio_edades"" 
+
+"""
+
+#edades = pd.Series([23, 30, 26, 27, 22, 24, 25, 28])
+#promedio_edades = edades.mean()
+
+
+"""
+Agregación de Series en Pandas 2
+
+Dada lista con los siguientes valores de ventas diarias de una tienda en una semana:
+ventas = [120, 150, 90, 200, 210, 130, 160], realiza las siguientes tareas:
+    Crea una serie de Pandas con los días de la semana como índice  (asumiendo que el primer valor corresponde al Lunes).
+    Calcula y muestra la suma total de las ventas de la semana. Almacena este valor en una variable llamada: suma_total_ventas
+    Encuentra y muestra el día de mayores ventas. Almacena este valor en una variable llamada: dia_mayores_ventas
+    Calcula y muestra el promedio de ventas de la semana. Almacena este valor en una variable llamada: promedio_ventas
+"""
+
+
+#ventas = pd.Series([120, 150, 90, 200, 210, 130, 160], ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"])
+#
+#suma_total_ventas = ventas.sum()
+#dia_mayores_ventas =  ventas.max()
+#promedio_ventas = ventas.mean()
+
+#print(f"Suma {suma_total_ventas}")
+#print(f"dia_mayores_ventas {dia_mayores_ventas}")
+#print(f"promedio_ventas {promedio_ventas}")
+
+
+"""
+Agregación de Series en Pandas 3
+Considera una serie de Pandas que representa las ventas de un mes, donde cada valor corresponde a las ventas de un día específico. No modifiques la serie de Pandas brindada en el ejercicio.
+Realiza las siguientes operaciones y muestra los resultados empleando los métodos correspondientes:
+    Calcula el total de ventas del mes. Almacena su valor en una variable llamada: total_ventas_mes
+    Encuentra el día con las ventas más bajas. Almacena su valor en una variable llamada: dia_ventas_mas_bajas
+    Determina el promedio mensual de ventas.  Almacena su valor en una variable llamada: promedio_ventas_mes
+"""
+
+# Serie de ventas del mes
+
+ventas_mes = pd.Series([220, 235, 260, 213, 202, 298, 265, 198, 220, 230, 190, 215, 275, 222, 218, 245, 233, 210, 290, 210, 215, 220, 225, 230, 245, 250, 260, 270, 280, 295])
+total_ventas_mes = ventas_mes.sum()
+dia_ventas_mas_bajas = ventas_mes.min()
+promedio_ventas_mes = ventas_mes.mean()
+
+print(total_ventas_mes)
+print(dia_ventas_mas_bajas)
+print(promedio_ventas_mes)
+

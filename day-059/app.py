@@ -107,4 +107,57 @@ print(inner)
 result[1:4,1:4] = inner;
 print(result)
 
+## Mathematics
+print("====================")
+a = np.array([1, 2, 3, 4])
+print("Original ...")
+print(a)
+print("Array + 2")
+print(a + 2)
+print("Array * 2")
+print(a * 2)
+a += 2
+print(a)
+
+# Basic Operations
+print(np.cos(a))
+
+## Linear Algebra
+a = np.full((2, 3), 2)
+b = np.full((3, 2), 3)
+print(a)
+print(b)
+# Algebra Multiplication
+print( np.matmul(a, b) )
+# Find the determinat
+a = np.array([[2, 2, 2], [4, 4, 4], [7, 8, 9]])
+print(np.linalg.det(a))
+
+## Statics
+a = np.array([[12, 4, 5, 9, 7], [2, 14, 7, 5, 12]])
+#min
+print(np.min(a))
+#max
+print(np.max(a))
+
+## Reorganization Array
+# reshape
+a = np.ones((4,2))
+print(a)
+print(np.reshape(a, (2, 4)))
+
+## Stack
+a = np.array([1, 2, 3, 4])
+b = np.array([5, 6, 7, 8])
+
+# Vertical stacking  
+result = np.vstack([a, b, a])
+print(result)
+
+# Horizontal stacking
+result = np.hstack([a, b])
+print(result)
+
+
+
 
