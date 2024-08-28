@@ -158,6 +158,41 @@ print(result)
 result = np.hstack([a, b])
 print(result)
 
+#Load dato from file
 
+result = np.genfromtxt('../data/numbers.csv', delimiter=',')
+result.astype(np.int32)
+print(result)
 
+a = np.any(result > 10) 
+print(a)
+a = np.any(result > 10, axis=0) 
+print(a)
+a = np.any(result > 10, axis=1) 
+print(a)
 
+"""
+1  2  3  4  5
+6  7  8  9  10
+11 12 13 14 15
+16 17 18 19 20
+21 22 23 24 25
+26 27 28 29 30
+"""
+a = np.array([
+    [1, 2, 3, 4,  5],
+    [6,  7,  8,  9,  10],
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25],
+    [26, 27, 28, 29, 30]
+    ])
+
+result = a[2:4, 0:2] 
+print(result)
+
+result = a[[0,1,2,3], [1,2,3,4]] 
+print(result)
+
+result = a[[0,4,5], 3:5] 
+print(result)
