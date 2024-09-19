@@ -43,3 +43,4 @@ print(img_gray[0,])
 U, s, Vt = linalg.svd(img_gray)
 
 print(U.shape, s.shape, Vt.shape)
+
