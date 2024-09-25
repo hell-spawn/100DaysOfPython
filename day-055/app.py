@@ -1,71 +1,48 @@
-import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt 
+from numpy import linalg
 
+img=plt.imread("../data/27295659492.jpg")
 
-"""
-Combinar DataFrames en Pandas con join()
+#img=plt.imread("../data/demo.jpg")
+#print(type(img)) #numpy.ndarray
+print(img[0,0,:])
+print(img.shape)
+#plt.imshow(img)
+#plt.show()
 
-Utiliza el método join() para combinar df_a y df_b en un nuevo DataFrame llamado df_combinado, usando el argumento por defecto de how.
-"""
+img_array = img / 255
 
+print(img_array.max(), img_array.min())
+print(img_array.dtype)
 
-# Creación del DataFrame df_a
-df_a = pd.DataFrame({
-    'id': [1, 2, 3],
-    'Nombre': ['Ana', 'Beto', 'Carla']
-})
-df_a.set_index('id', inplace=True)
+red_array = img_array[:, :, 0]
+green_array = img_array[:, :, 1]
+blue_array = img_array[:, :, 2]
 
-# Creación del DataFrame df_b
-df_b = pd.DataFrame({
-    'id': [1, 2, 3],
-    'Edad': [25, 30, 35]
-})
-df_b.set_index('id', inplace=True)
+print(img[0,0,:])
+print(img_array[0,0,:])
+print(red_array[0, 0:3 ])
 
-df_combinado = df_a.join(df_b)
+#plt.imshow(red_array, cmap="Reds")
+#plt.show()
+#
+#plt.imshow(green_array, cmap="Greens")
+#plt.show()
+#
+#plt.imshow(blue_array, cmap="Blues")
+#plt.show()
 
-print(df_combinado)
+img_gray = img_array @ [0.2126, 0.7152, 0.0722]
+print(img_gray.shape)
+print(img_gray[0,])
 
+#plt.imshow(img_gray, cmap="gray")
+#plt.show()
 
-"""
-Dado el DataFrame productos_df con columnas ProductoID, Nombre y Precio, y el DataFrame categorias_df con columnas CategoriaID y NombreCategoria
-"""
+U, s, Vt = linalg.svd(img_gray)
 
-productos_df = pd.DataFrame({
-    'ProductoID': [1, 2, 3, 4],
-    'Nombre': ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4'],
-    'Precio': [100, 150, 200, 250]
-}).set_index('ProductoID')
-
-categorias_df = pd.DataFrame({
-    'CategoriaID': [1, 2],
-    'NombreCategoria': ['Categoría 1', 'Categoría 2']
-}).set_index('CategoriaID')
-
-
-df_combinado = productos_df.join(categorias_df)
-
-
-"""
-DataFrames en un DataFrame llamado df_combinado de tal manera que se conserven todos los registros del DataFrame de productos_df, 
-incluso si no tienen una categoría correspondiente en categorias_df. Para esto, debes utilizar el parámetro how="right" en el método join().
-"""
-
-productos_df = pd.DataFrame({
-    'ProductoID': [1, 2, 3, 4],
-    'Nombre': ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4'],
-    'Precio': [100, 150, 200, 250]
-})
-
-productos_df = productos_df.set_index('ProductoID')
-
-categorias_df = pd.DataFrame({
-    'CategoriaID': [1, 2, 3],
-    'NombreCategoria': ['Categoría 1', 'Categoría 2', 'Categoría 3']
-}).set_index('CategoriaID')
-
-df_combinado = categorias_df.join(productos_df, how="right")
-print(df_combinado)
+print(U.shape, s.shape, Vt.shape)
 
 
 """ 
